@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!---------user = User.query.filter_by(email=email).first()-------------------------------------->
+
+
+
+		{% for blog in blogs %}
+		<div><h1>
+
+			<a href='/blog?id={{blog.id}} '>
+			{{blog.title}}  </a></h1>
+			<p>
+				{{blog.body}}
+			</p>
+		</div>
+		<hr/>
+		{% endfor %}
+
+
+
+{% endblock %}
+
+

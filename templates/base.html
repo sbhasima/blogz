@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{base_title}}</title>
+        <style>
+            nav {display: inline}
+            .sublink {margin-right: 25px;}
+            span {color: red;}
+            
+        </style>
+    </head>
+<body>
+    <nav >
+        <a class="sublink" href='/blog'>Main Blog Page  </a>
+        <a class="sublink" href='/newpost'>Add a Blog Entry</a>
+    </nav>
+    
+    <header>
+		<center><h1>{{base_title}}</h1></center>	
+	</header>
+
+    {% block content %}
+
+    
+    {% endblock %}
+
+</body>
+</html>
