@@ -3,21 +3,26 @@
 {% block content %}
 
 
-<!---------user = User.query.filter_by(email=email).first()-------------------------------------->
 
-
-
-		{% for blog in blogs %}
-		<div><h1>
+	{% for blog in blogs %}
+		<div><h2>
 
 			<a href='/blog?id={{blog.id}} '>
-			{{blog.title}}  </a></h1>
+			{{blog.title}}  </a></h2>
 			<p>
 				{{blog.body}}
 			</p>
 		</div>
+		
+		{% for user in users%}
+			{% if user.id==blog.owner_id %}
+		<p><small><i>Written by: <a href='/singleUser?uid={{blog.owner_id}}'> {{user.username}}</a>
+		</i></small></p>
+			{% endif%}
+		{%endfor%}
+		
 		<hr/>
-		{% endfor %}
+	{% endfor %}
 
 
 

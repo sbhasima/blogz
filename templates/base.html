@@ -5,20 +5,34 @@
         <style>
             nav {display: inline}
             .sublink {margin-right: 25px;}
-            span {color: red;}
-            
+            span {color: red;}            
         </style>
     </head>
 <body>
+
     <nav >
+        <a class="sublink" href='/index'>Home</a>
         <a class="sublink" href='/blog'>Main Blog Page  </a>
         <a class="sublink" href='/newpost'>Add a Blog Entry</a>
+        <a class="sublink" href='/login'>log in</a>
+        <a class="sublink" href='/logout'>log out</a>
     </nav>
     
     <header>
 		<center><h1>{{base_title}}</h1></center>	
-	</header>
+    </header>
+    
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+            {% for category,message in messages %}
+                <li class="{{category}}">{{message}}</li>
+            {% endfor %}
+        </ul>
+    {% endwith %}
 
+
+
+    
     {% block content %}
 
     
